@@ -1,0 +1,51 @@
+/* scroll snap takes care of restoring scroll position */
+.swipe-container {
+    display: flex;
+    overflow: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    height: 200px;
+    background-color: red;
+    position: relative;
+  }
+  .my-btn {
+    margin: 10px;
+    padding: 10px;
+  }
+  /* scrollbar should be hidden */
+  .swipe-container::-webkit-scrollbar {
+    display: none;
+  }
+  /* main element should always snap into view */
+  .swipe-element {
+    scroll-snap-align: start;
+    font-family: sans-serif;
+    padding: 16px;
+    background-color: whitesmoke;
+  }
+  /* actions and element should be 100% wide */
+  .action,
+  .swipe-element {
+    min-width: 100%;
+  }
+  .action {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+  }
+  /* icon should remain sticky */
+  i {
+    color: white;
+    position: sticky;
+    left: 16px;
+    right: 16px;
+  }
+  /* action background colors */
+  .left {
+    background-color: orchid;
+  }
+  .right {
+    justify-content: flex-end;
+    background-color: cornflowerblue;
+  }

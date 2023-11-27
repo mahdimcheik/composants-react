@@ -1,0 +1,108 @@
+:root {
+  --main-bg-color: rgba(255,255,255, .5);
+  --default-margin: 10px;
+  --border-color: black;
+}
+.item {
+    margin: var(--default-margin) auto;
+  width: 60%;
+  background-color: var(--main-bg-color);
+  display: flex;
+  min-width: 380px;
+  scroll-snap-align: center;
+  min-width: min(700px, 100%);
+}
+.border{
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.item-vertical {
+    margin: var(--default-margin) auto;
+
+  width: 60%;
+  background-color: var(--main-bg-color);
+
+  display: flex;
+  min-width: min(700px, 100%);
+  scroll-snap-align: center;
+
+}
+.item-img {
+  width: 40%;
+  aspect-ratio: 4 / 3;
+  background-size: 100% 100% ;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: var(--default-margin);
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+}
+.item-img:hover {
+  background-size: 120%  120%;
+}
+.item-details {
+    width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: var(--default-margin);
+  justify-content: space-between;
+}
+.item-description {
+  margin-top: var(--default-margin);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+@media screen and (max-width : 992px) {
+    .item,.item-vertical {
+        width: 80%;
+    }
+    .item-img{
+        width: 30%; 
+    }
+    .item-details {
+        width: 70%;
+    }
+}
+@media screen and (max-width : 768px) {
+    .item,.item-vertical {
+        min-width: min(600px, 90%);
+        
+    }
+    .item-img{
+        width: 30%; 
+    }
+    .item-details {
+        width: 70%;
+    }
+}
+@media screen and (max-width : 576px) {
+    .item {
+        min-width: min(500px, 95%);
+    }
+    .item .item-img{
+        width: 30%; 
+    }
+    .item .item-details {
+        width: 70%;
+    }
+    .item-vertical{
+        min-width: min(500px, 90%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+    .item-vertical .item-img{
+        width: 90%; 
+        margin: 10px 0;
+    }
+    .item-vertical .item-details {
+        width: 90%;
+    }
+    .border{
+        border: none;
+    }
+}
